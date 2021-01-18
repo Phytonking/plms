@@ -1,0 +1,13 @@
+{% extends "web/layout.html" %}
+
+
+{% block b %}
+    Home
+
+{% endblock %}
+
+{% block sub %}
+    <p>Welcome to the PLMS debate website.</p>
+    <a href="{% url 'web:t_reg' %}"><p>Team register</p></a>
+    <a href="{% url 'web:p_reg' %}"><p>Participant register</p></a>
+{% endblock %}

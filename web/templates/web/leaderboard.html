@@ -1,0 +1,84 @@
+{% extends "web/layout.html" %}
+
+
+{% block b %}
+    LeaderBoard
+
+{% endblock %}
+
+{% block sub %}
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+    
+    <h2>Trivial Debate</h2>
+    <table>
+        <tr>
+            <th>Team ID</th>
+            <th>Team Name</th>
+            <th>Points</th>
+            <th>Team status</th>
+        </tr>
+        {% for x in trivial %}
+            <tr>
+                <th>{{x.teamID}}</th>
+                <th>{{x.team_name}}</th>
+                <th>{{x.points}}</th>
+                {% if LOE == 0 %}
+                    <th>Still in Game</th>
+                {% elif LOE == 1 and x.points < 50 or LOE == 2 and x.points < 100 or LOE == 3 and x.points < 150 %}
+                    <th>Eliminated</th>
+                {% else %}
+                    <th>Qualified</th>
+                {% endif %}                
+            </tr>
+        {% endfor %}
+
+        
+          
+    </table>
+
+
+    <h2>Forensic Debate</h2>
+    <table>
+        <tr>
+            <th>Team ID</th>
+            <th>Team Name</th>
+            <th>Points</th>
+            <th>Team status</th>
+        </tr>
+        {% for f in forensic %}
+            <tr>
+                <th>{{f.teamID}}</th>
+                <th>{{f.team_name}}</th>
+                <th>{{f.points}}</th>
+                {% if FLOE == 0 %}
+                    <th>Still in Game</th>
+                {% elif FLOE == 1 and f.points < 50 or FLOE == 2 and f.points < 100 or FLOE == 3 and f.points < 150 %}
+                    <th>Eliminated</th>
+                {% else %}
+                    <th>Qualified</th>
+                {% endif %}                
+            </tr>
+        {% endfor %}
+
+        
+          
+    </table>
+
+
+{% endblock %}

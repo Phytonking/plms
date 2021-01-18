@@ -1,0 +1,20 @@
+{% extends "web/layout.html" %}
+
+
+{% block b %}
+    Participant Registeration
+
+{% endblock %}
+
+{% block sub %}
+    <form action="{% url 'web:p_reg' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="name" style="width:500px;" required><br><br>
+        <input type="email" name="email" placeholder="email" style="width:500px;" required><br><br>
+        <input type="tel" name="ph" placeholder="Phone Number" style="width:500px;" required><br><br>
+        <input type="number" name="team" placeholder="Team ID" style="width:500px;" required><br><br>
+        <input type="submit">
+    </form>
+    {{message}}
+{% endblock %}
+
