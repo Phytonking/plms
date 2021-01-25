@@ -66,7 +66,7 @@ def t_reg(request):
     else:
         name = request.POST["name"]
         email = request.POST["email"]
-        ph = str(request.POST["ph"])
+        ph = request.POST["ph"]
         team_name = request.POST["team_name"]
         team_type = request.POST["team_type"]
         teamid = random.randint(1,1000000)
