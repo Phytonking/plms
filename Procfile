@@ -1,1 +1,1 @@
-web: python3 manage.py runserver
+web: gunicorn --env DJANGO_SETTINGS_MODULE=debate.settings -b 0.0.0.0:$PORT debate.wsgi
