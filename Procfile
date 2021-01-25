@@ -1,1 +1,1 @@
-web: python3 manage.py createsuperuser
+release: python3 manage.py createsuperuser
