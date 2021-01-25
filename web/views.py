@@ -22,7 +22,7 @@ def p_reg(request):
     else:
         name = request.POST["name"]
         email = request.POST["email"]
-        ph = request.POST["ph"]
+        ph = str(request.POST["ph"])
         team = request.POST["team"]
         teams = models.teams.objects.all()
         team_exists = False
@@ -66,14 +66,14 @@ def t_reg(request):
     else:
         name = request.POST["name"]
         email = request.POST["email"]
-        ph = request.POST["ph"]
+        ph = str(request.POST["ph"])
         team_name = request.POST["team_name"]
         team_type = request.POST["team_type"]
-        teamid = random.randint(0,100000000)
+        teamid = random.randint(1,1000000)
         teams = models.teams.objects.all()
         for x in teams:
             if x.teamID == teamid:
-                teamid = random.randint(0,100000000)
+                teamid = random.randint(1,1000000)
 
         t = models.teams(teamID=teamid, leader_name=name, leader_email=email, leader_phone_number=ph, team_name=team_name, points = 0, team_type=team_type)
         t.save()

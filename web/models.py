@@ -4,10 +4,10 @@ from django.db import models
 
 
 class teams(models.Model):
-    teamID = models.IntegerField()
+    teamID = models.BigIntegerField()
     leader_name = models.TextField()
     leader_email = models.EmailField()
-    leader_phone_number = models.IntegerField()
+    leader_phone_number = models.TextField()
     team_name = models.TextField()
     points = models.IntegerField()
     team_type = models.TextField(null=True)
@@ -19,7 +19,7 @@ class teams(models.Model):
 class participants(models.Model):
     name = models.TextField()
     email = models.EmailField()
-    phone_number = models.IntegerField()
+    phone_number = models.TextField()
     team = models.IntegerField()
     def __str__(self):
         return f"{self.name} {self.team}"
