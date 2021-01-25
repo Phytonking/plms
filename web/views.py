@@ -22,7 +22,7 @@ def p_reg(request):
     else:
         name = request.POST["name"]
         email = request.POST["email"]
-        ph = str(request.POST["ph"])
+        ph = request.POST["ph"]
         team = request.POST["team"]
         teams = models.teams.objects.all()
         team_exists = False
