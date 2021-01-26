@@ -94,7 +94,7 @@ def lad(request):
             FLOE = f.level    
         return render(request, "web/leaderboard.html", {
             "trivial":trivial,
-            "Forensic":Forensic,
+            "forensic":Forensic,
             "LOE":LOE,
             "FLOE":FLOE
         })
