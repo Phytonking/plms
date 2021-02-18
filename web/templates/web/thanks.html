@@ -7,5 +7,11 @@
 {% endblock %}
 
 {% block sub %}
-    <p>Thanks for signing up to the tournament, you will recieve an email soon</p>
+
+    {% if team != True %}
+        <p>Thanks for signing up to the tournament, you will recieve an email soon.</p>
+    {% else %}
+        <p>Thanks for signing up to the tournament, your team id is: {{teamid}}</p>
+        <p>Please write this Down and keep if for later to give to your students, they will need it for registration.</p>
+    {% endif %}
 {% endblock %}
