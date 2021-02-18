@@ -58,7 +58,9 @@ def p_reg(request):
         else:
             p = models.participants(name=name,email=email, phone_number=ph, team=team)
             p.save()
-            return HttpResponseRedirect('/thanks')
+            return render(request, "web/thanks.html", {
+                "team": False
+            })
 
 def t_reg(request):
     if request.method == "GET":
@@ -77,7 +79,10 @@ def t_reg(request):
 
         t = models.teams(teamID=teamid, leader_name=name, leader_email=email, leader_phone_number=ph, team_name=team_name, points = 0, team_type=team_type)
         t.save()
-        return HttpResponseRedirect("/thanks")
+        return render(request, "web/thanks.html", {
+            "team": True,
+            "teamid": teamid
+        })
 
 
 def lad(request):
