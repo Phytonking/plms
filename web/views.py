@@ -33,7 +33,7 @@ def p_reg(request):
                 team_exists = True
                 if x.team_type == "Forensic":
                     num_of_part = models.participants.objects.filter(team=x.teamID)
-                    if len(num_of_part) < 2:
+                    if len(num_of_part) < 4:
                         not_full = True
                         break
                     else:
