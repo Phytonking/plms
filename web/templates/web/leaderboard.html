@@ -40,7 +40,7 @@
                 <th>{{x.points}}</th>
                 {% if LOE == 0 %}
                     <th>Still in Game</th>
-                {% elif LOE == 1 and x.points < 60 %}
+                {% elif LOE == 1 and x.points < 40 %}
                     <th>Eliminated</th>
                 {% else %}
                     <th>Qualified</th>
@@ -68,7 +68,7 @@
                 <th>{{f.points}}</th>
                 {% if FLOE == 0 %}
                     <th>Still in Game</th>
-                {% elif FLOE == 1 and f.points < 60 %}
+                {% elif FLOE == 1 and f.points < 40 %}
                     <th>Eliminated</th>
                 {% else %}
                     <th>Qualified</th>
